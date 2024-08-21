@@ -1,0 +1,15 @@
+services:
+  go_db:
+    container_name: go-jwt-db
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=go-jwt
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=go-jwt
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
